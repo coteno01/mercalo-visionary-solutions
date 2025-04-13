@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,6 +15,13 @@ import {
   CheckCircle 
 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -29,6 +37,10 @@ const ContactPage = () => {
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (value: string, name: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
   
@@ -72,6 +84,17 @@ const ContactPage = () => {
       setIsSubmitting(false);
     }
   };
+
+  // Services offered by Mercalo
+  const services = [
+    "AI Solutions",
+    "AI Agents",
+    "ERP Implementation",
+    "Business Process Automation",
+    "Digital Transformation",
+    "Data Analytics",
+    "Other"
+  ];
 
   return (
     <div className="flex flex-col">
@@ -136,7 +159,7 @@ const ContactPage = () => {
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
+            <div className="bg-white p-8 rounded-xl shadow-md" id="contact-form">
               <h2 className="heading-md mb-6">Send Us a Message</h2>
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -197,14 +220,21 @@ const ContactPage = () => {
                   <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">
                     Subject *
                   </label>
-                  <Input
-                    id="subject"
-                    name="subject"
+                  <Select 
+                    onValueChange={(value) => handleSelectChange(value, "subject")} 
                     value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    placeholder="How can we help you?"
-                  />
+                  >
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select a service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {services.map((service) => (
+                        <SelectItem key={service} value={service}>
+                          {service}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
                 
                 <div className="mb-6">
