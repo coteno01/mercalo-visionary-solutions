@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,18 +32,26 @@ const ContactPage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // In a production environment, this would send the data to a server
+      // For now, we'll simulate sending an email to info@mercaloconsulting.com
+      console.log("Sending message to info@mercaloconsulting.com");
+      console.log("Form data:", formData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
       toast({
         title: "Message Sent Successfully",
-        description: "We'll get back to you as soon as possible.",
+        description: "Your message has been sent to info@mercaloconsulting.com. We'll get back to you as soon as possible.",
         duration: 5000
       });
-      setIsSubmitting(false);
+      
+      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -53,7 +60,17 @@ const ContactPage = () => {
         subject: "",
         message: ""
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error Sending Message",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+        duration: 5000
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -89,8 +106,8 @@ const ContactPage = () => {
                 <Mail className="text-white" size={20} />
               </div>
               <h3 className="text-xl font-bold mb-2">Email</h3>
-              <p className="text-gray-700 mb-1">info@mercalo.com</p>
-              <p className="text-gray-700">support@mercalo.com</p>
+              <p className="text-gray-700 mb-1">info@mercaloconsulting.com</p>
+              <p className="text-gray-700">support@mercaloconsulting.com</p>
             </div>
             
             <div className="bg-mercalo-light p-6 rounded-xl">
@@ -324,7 +341,13 @@ const ContactPage = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <Button className="bg-mercalo-accent hover:bg-white hover:text-mercalo-purple" size="lg">
+                <Button 
+                  className="bg-mercalo-accent hover:bg-white hover:text-mercalo-purple" 
+                  size="lg"
+                  onClick={() => {
+                    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   Schedule a Consultation
                 </Button>
               </div>

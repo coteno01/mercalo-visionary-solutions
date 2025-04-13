@@ -75,7 +75,9 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <Button className="hidden md:block btn-primary">Get Started</Button>
+        <Link to="/contact">
+          <Button className="hidden md:block btn-primary">Get Started</Button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -105,9 +107,11 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="btn-primary mt-4 w-full" onClick={closeMenu}>
-              Get Started
-            </Button>
+            <Link to="/contact" onClick={closeMenu}>
+              <Button className="btn-primary mt-4 w-full">
+                Get Started
+              </Button>
+            </Link>
           </nav>
         </div>
       )}

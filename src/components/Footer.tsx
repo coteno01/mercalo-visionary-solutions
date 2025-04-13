@@ -16,16 +16,16 @@ const Footer = () => {
               Empowering businesses through innovative AI, ERP, and automation solutions that drive growth and efficiency.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-mercalo-accent transition-colors">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-mercalo-accent transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-mercalo-accent transition-colors">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-mercalo-accent transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-mercalo-accent transition-colors">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-mercalo-accent transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-mercalo-accent transition-colors">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-mercalo-accent transition-colors">
                 <Instagram size={20} />
               </a>
             </div>
@@ -114,7 +114,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="text-mercalo-accent flex-shrink-0" />
-                <span className="text-gray-300">info@mercalo.com</span>
+                <a href="mailto:info@mercaloconsulting.com" className="text-gray-300 hover:text-mercalo-accent">info@mercaloconsulting.com</a>
               </li>
             </ul>
           </div>
@@ -126,15 +126,15 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Mercalo. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-mercalo-accent text-sm transition-colors">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-mercalo-accent text-sm transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-mercalo-accent text-sm transition-colors">
+              </Link>
+              <Link to="/terms" className="text-gray-400 hover:text-mercalo-accent text-sm transition-colors">
                 Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-mercalo-accent text-sm transition-colors">
+              </Link>
+              <Link to="/cookies" className="text-gray-400 hover:text-mercalo-accent text-sm transition-colors">
                 Cookie Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
