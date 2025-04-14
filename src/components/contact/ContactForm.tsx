@@ -1,9 +1,20 @@
 
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/components/ui/use-toast";
+import { toast } from "@/hooks/use-toast";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import {
   Select,
   SelectContent,
@@ -12,45 +23,37 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  company: string;
-  subject: string;
-  message: string;
-}
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().optional(),
+  company: z.string().optional(),
+  subject: z.string().min(1, "Please select a subject"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    subject: "",
-    message: ""
+  const form = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      subject: "",
+      message: "",
+    },
   });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
-  const handleSelectChange = (value: string, name: string) => {
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-  
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
+  const { isSubmitting } = form.formState;
+
+  const onSubmit = async (data: FormData) => {
     try {
       // In a production environment, this would send the data to a server
-      // For now, we'll simulate sending an email to info@mercaloconsulting.com
       console.log("Sending message to info@mercaloconsulting.com");
-      console.log("Form data:", formData);
+      console.log("Form data:", data);
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
@@ -58,32 +61,21 @@ const ContactForm = () => {
       toast({
         title: "Message Sent Successfully",
         description: "Your message has been sent to info@mercaloconsulting.com. We'll get back to you as soon as possible.",
-        duration: 5000
+        duration: 5000,
       });
       
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        subject: "",
-        message: ""
-      });
+      form.reset();
     } catch (error) {
       console.error("Error sending message:", error);
       toast({
         title: "Error Sending Message",
         description: "There was an error sending your message. Please try again later.",
         variant: "destructive",
-        duration: 5000
+        duration: 5000,
       });
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
-  // Services offered by Mercalo
   const services = [
     "AI Solutions",
     "AI Agents",
@@ -91,111 +83,124 @@ const ContactForm = () => {
     "Business Process Automation",
     "Digital Transformation",
     "Data Analytics",
-    "Other"
+    "Other",
   ];
 
   return (
     <div className="bg-white p-8 rounded-xl shadow-md" id="contact-form">
       <h2 className="heading-md mb-6">Send Us a Message</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-              Your Name *
-            </label>
-            <Input
-              id="name"
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <FormField
+              control={form.control}
               name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              placeholder="John Doe"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Your Name *</FormLabel>
+                  <FormControl>
+                    <Input placeholder="John Doe" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-              Email Address *
-            </label>
-            <Input
-              id="email"
+
+            <FormField
+              control={form.control}
               name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              placeholder="john@example.com"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email Address *</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="john@example.com" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-          <div>
-            <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
-              Phone Number
-            </label>
-            <Input
-              id="phone"
+
+            <FormField
+              control={form.control}
               name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="+234 123 456 7890"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input placeholder="+234 123 456 7890" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-          <div>
-            <label htmlFor="company" className="block text-gray-700 font-medium mb-2">
-              Company Name
-            </label>
-            <Input
-              id="company"
+
+            <FormField
+              control={form.control}
               name="company"
-              value={formData.company}
-              onChange={handleChange}
-              placeholder="Your Company Ltd"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Company Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Your Company Ltd" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
           </div>
-        </div>
-        
-        <div className="mb-6">
-          <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">
-            Subject *
-          </label>
-          <Select 
-            onValueChange={(value) => handleSelectChange(value, "subject")} 
-            value={formData.subject}
-          >
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a service" />
-            </SelectTrigger>
-            <SelectContent>
-              {services.map((service) => (
-                <SelectItem key={service} value={service}>
-                  {service}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        
-        <div className="mb-6">
-          <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-            Your Message *
-          </label>
-          <Textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            placeholder="Please provide details about your inquiry..."
-            rows={5}
+
+          <FormField
+            control={form.control}
+            name="subject"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Subject *</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a service" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {services.map((service) => (
+                      <SelectItem key={service} value={service}>
+                        {service}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
           />
-        </div>
-        
-        <Button 
-          type="submit"
-          className="btn-primary w-full"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
-        </Button>
-      </form>
+
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Your Message *</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Please provide details about your inquiry..."
+                    className="min-h-[120px]"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <Button 
+            type="submit"
+            className="btn-primary w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending..." : "Send Message"}
+          </Button>
+        </form>
+      </Form>
     </div>
   );
 };
