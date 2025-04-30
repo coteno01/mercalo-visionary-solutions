@@ -12,8 +12,7 @@ const ContactInfo = () => {
               <Phone className="text-white" size={20} />
             </div>
             <h3 className="text-xl font-bold mb-2">Phone</h3>
-            <p className="text-gray-700 mb-1">+234 123 456 7890</p>
-            <p className="text-gray-700">+234 987 654 3210</p>
+            <p className="text-gray-700 mb-1">+254 100722504</p>
           </div>
           
           <div className="bg-mercalo-light p-6 rounded-xl">
@@ -30,8 +29,8 @@ const ContactInfo = () => {
               <MapPin className="text-white" size={20} />
             </div>
             <h3 className="text-xl font-bold mb-2">Location</h3>
-            <p className="text-gray-700 mb-1">123 Business Avenue</p>
-            <p className="text-gray-700">Tech District, Lagos, Nigeria</p>
+            <p className="text-gray-700 mb-1">Victoria Plaza, Westlands</p>
+            <p className="text-gray-700">Nairobi, Kenya</p>
           </div>
           
           <div className="bg-mercalo-light p-6 rounded-xl">

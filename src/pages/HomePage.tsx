@@ -35,9 +35,11 @@ const HomePage = () => {
                     Discover Our Solutions
                   </Button>
                 </Link>
-                <Button variant="outline" size="lg">
-                  Contact Us
-                </Button>
+                <Link to="/contact">
+                  <Button variant="outline" size="lg">
+                    Contact Us
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative animate-fade-in">

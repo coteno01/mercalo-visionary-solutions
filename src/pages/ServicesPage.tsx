@@ -25,7 +25,8 @@ const ServicesPage = () => {
         "Intelligent automation of complex tasks",
         "Data-driven insights for strategic planning",
         "Custom ML models tailored to your business needs"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
     },
     {
       icon: <Bot size={32} />,
@@ -36,7 +37,8 @@ const ServicesPage = () => {
         "Process automation with intelligent agents",
         "Seamless integration with existing systems",
         "Continuous learning and improvement"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
     },
     {
       icon: <BarChart3 size={32} />,
@@ -47,7 +49,8 @@ const ServicesPage = () => {
         "Integration with existing systems",
         "Customization for specific business needs",
         "Staff training and knowledge transfer"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
     },
     {
       icon: <Workflow size={32} />,
@@ -58,7 +61,8 @@ const ServicesPage = () => {
         "Reduced operational costs",
         "Improved accuracy and consistency",
         "Enhanced employee productivity"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -82,7 +86,7 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" id="top">
       {/* Hero Section */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-white to-mercalo-light">
         <div className="container-custom">
@@ -142,7 +146,7 @@ const ServicesPage = () => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-mercalo-purple rounded-full opacity-5 blur-3xl"></div>
                     <img 
-                      src={`https://images.unsplash.com/photo-${1487058792275 + index * 1000}-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80`} 
+                      src={service.image}
                       alt={service.title} 
                       className="rounded-lg shadow-xl relative z-10" 
                     />
