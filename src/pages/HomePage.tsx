@@ -30,9 +30,11 @@ const HomePage = () => {
                 technologies and tailored strategies.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button className="btn-primary" size="lg">
-                  Discover Our Solutions
-                </Button>
+                <Link to="/services">
+                  <Button className="btn-primary" size="lg">
+                    Discover Our Solutions
+                  </Button>
+                </Link>
                 <Button variant="outline" size="lg">
                   Contact Us
                 </Button>
