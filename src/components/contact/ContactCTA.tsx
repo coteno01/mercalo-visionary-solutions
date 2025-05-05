@@ -10,7 +10,7 @@ const ContactCTA = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-mercalo-darkpurple text-white">
+    <section className="py-16 md:py-24 bg-mercalo-navy text-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -21,25 +21,25 @@ const ContactCTA = () => {
             </p>
             <div className="space-y-4">
               <div className="flex items-start">
-                <CheckCircle className="text-mercalo-accent mt-1 mr-3 flex-shrink-0" size={20} />
+                <CheckCircle className="text-mercalo-blue mt-1 mr-3 flex-shrink-0" size={20} />
                 <p className="text-gray-300">Personalized solutions tailored to your needs</p>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="text-mercalo-accent mt-1 mr-3 flex-shrink-0" size={20} />
+                <CheckCircle className="text-mercalo-blue mt-1 mr-3 flex-shrink-0" size={20} />
                 <p className="text-gray-300">Expert guidance from industry specialists</p>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="text-mercalo-accent mt-1 mr-3 flex-shrink-0" size={20} />
+                <CheckCircle className="text-mercalo-blue mt-1 mr-3 flex-shrink-0" size={20} />
                 <p className="text-gray-300">Comprehensive implementation and support</p>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="text-mercalo-accent mt-1 mr-3 flex-shrink-0" size={20} />
+                <CheckCircle className="text-mercalo-blue mt-1 mr-3 flex-shrink-0" size={20} />
                 <p className="text-gray-300">Measurable results and ROI</p>
               </div>
             </div>
             <div className="mt-8">
               <Button 
-                className="bg-mercalo-accent hover:bg-white hover:text-mercalo-purple" 
+                className="bg-mercalo-blue hover:bg-white hover:text-mercalo-navy" 
                 size="lg"
                 onClick={scrollToContactForm}
               >
@@ -70,7 +70,7 @@ const ContactCTA = () => {
                     className="bg-white/10 border-white/30 text-white placeholder:text-gray-300"
                   />
                 </div>
-                <Button className="w-full bg-white text-mercalo-purple hover:bg-gray-100">
+                <Button className="w-full bg-white text-mercalo-navy hover:bg-gray-100">
                   Request Call Back
                 </Button>
               </div>

@@ -7,6 +7,15 @@
   text-align: left;
 }
 
+/* Ensure proper contrast for text in various backgrounds */
+.bg-mercalo-navy, .bg-mercalo-darknavy {
+  color: white;
+}
+
+.bg-mercalo-navy p, .bg-mercalo-darknavy p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* Keep other utility styles */
 .logo {
   height: 6em;

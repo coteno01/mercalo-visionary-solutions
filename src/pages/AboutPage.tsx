@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
@@ -237,7 +236,7 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-mercalo-darkpurple text-white">
+      <section className="py-16 md:py-24 bg-mercalo-navy text-white">
         <div className="container-custom text-center">
           <h2 className="heading-lg mb-6">Ready to Partner with Mercalo?</h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-8">
@@ -246,12 +245,12 @@ const AboutPage = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact">
-              <Button className="bg-mercalo-accent hover:bg-mercalo-purple text-white" size="lg">
+              <Button className="bg-mercalo-blue hover:bg-white hover:text-mercalo-navy" size="lg">
                 Get in Touch
               </Button>
             </Link>
             <Link to="/case-studies">
-              <Button variant="outline" className="text-white border-white hover:bg-white/10" size="lg">
+              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-mercalo-navy" size="lg">
                 View Our Case Studies
               </Button>
             </Link>

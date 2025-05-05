@@ -14,14 +14,14 @@ const CtaSection = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link to="/contact">
-            <Button className="bg-mercalo-blue hover:bg-mercalo-accent text-white" size="lg">
+            <Button className="bg-mercalo-blue hover:bg-white hover:text-mercalo-navy" size="lg">
               Contact Us Today
             </Button>
           </Link>
           <Link to="/services">
             <Button 
               variant="outline" 
-              className="bg-white text-mercalo-navy border-white hover:bg-mercalo-lightblue hover:text-mercalo-navy hover:border-mercalo-lightblue" 
+              className="bg-transparent text-white border-white hover:bg-white hover:text-mercalo-navy" 
               size="lg"
             >
               Explore Our Services

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -203,11 +202,11 @@ const BlogPage = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 md:py-24 bg-mercalo-purple text-white">
+      <section className="py-16 md:py-24 bg-mercalo-navy text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="heading-lg mb-6">Stay Updated</h2>
-            <p className="text-gray-200 mb-8">
+            <p className="text-gray-300 mb-8">
               Subscribe to our newsletter to receive the latest insights on AI, ERP, 
               and business process automation.
             </p>
@@ -216,7 +215,7 @@ const BlogPage = () => {
                 placeholder="Your email address" 
                 className="bg-white/10 border-white/30 text-white placeholder:text-gray-300"
               />
-              <Button className="bg-white text-mercalo-purple hover:bg-gray-100 sm:flex-shrink-0">
+              <Button className="bg-white text-mercalo-navy hover:bg-gray-100 sm:flex-shrink-0">
                 Subscribe
               </Button>
             </div>
