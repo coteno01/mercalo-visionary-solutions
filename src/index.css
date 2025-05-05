@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 250 20% 99%;
+    --background: 210 100% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -16,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 262 47% 50%;
+    --primary: 204 88% 57%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 258 83% 66%;
+    --secondary: 225 73% 57%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 258 83% 66%;
+    --accent: 225 73% 57%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -78,15 +78,15 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-mercalo-purple to-mercalo-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-mercalo-blue to-mercalo-accent;
   }
   
   .btn-primary {
-    @apply bg-mercalo-purple hover:bg-mercalo-accent text-white font-medium py-2 px-6 rounded-md transition-all duration-300;
+    @apply bg-mercalo-blue hover:bg-mercalo-accent text-white font-medium py-2 px-6 rounded-md transition-all duration-300;
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-mercalo-light text-mercalo-purple border border-mercalo-purple font-medium py-2 px-6 rounded-md transition-all duration-300;
+    @apply bg-white hover:bg-mercalo-lightblue/20 text-mercalo-blue border border-mercalo-blue font-medium py-2 px-6 rounded-md transition-all duration-300;
   }
   
   .card-hover {

@@ -53,9 +53,16 @@ const Navbar = () => {
     >
       <div className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center" onClick={closeMenu}>
-          <span className="text-2xl font-bold font-heading text-mercalo-darkpurple">
-            <span className="text-mercalo-purple">Mer</span>calo
-          </span>
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/53eca79b-1cad-402b-84cd-90dec706cb8d.png" 
+              alt="Mercalo Consulting Logo" 
+              className="h-12 mr-2"
+            />
+            <span className="text-2xl font-bold font-heading text-mercalo-navy hidden md:block">
+              <span className="text-mercalo-blue">Mercalo</span> Consulting
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -66,8 +73,8 @@ const Navbar = () => {
               to={item.path}
               className={`font-medium transition-colors duration-300 ${
                 isActive(item.path)
-                  ? "text-mercalo-purple"
-                  : "text-gray-700 hover:text-mercalo-purple"
+                  ? "text-mercalo-blue"
+                  : "text-gray-700 hover:text-mercalo-blue"
               }`}
             >
               {item.name}
@@ -99,8 +106,8 @@ const Navbar = () => {
                 to={item.path}
                 className={`font-medium text-lg py-2 transition-colors duration-300 ${
                   isActive(item.path)
-                    ? "text-mercalo-purple"
-                    : "text-gray-700 hover:text-mercalo-purple"
+                    ? "text-mercalo-blue"
+                    : "text-gray-700 hover:text-mercalo-blue"
                 }`}
                 onClick={closeMenu}
               >

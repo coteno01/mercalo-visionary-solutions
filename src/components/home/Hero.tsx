@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-white to-mercalo-light">
+    <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-white to-mercalo-lightblue/10">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col space-y-6 animate-fade-in">
@@ -12,7 +12,7 @@ const Hero = () => {
               <span className="text-gradient">Transforming</span> Business Through AI & ERP Solutions
             </h1>
             <p className="text-lg text-gray-700">
-              Mercalo partners with industry leaders to tackle critical challenges, 
+              Mercalo Consulting partners with industry leaders to tackle critical challenges, 
               enhance efficiency, and seize growth opportunities through innovative 
               technologies and tailored strategies.
             </p>
@@ -30,7 +30,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="relative animate-fade-in">
-            <div className="absolute inset-0 bg-mercalo-purple rounded-full opacity-5 blur-3xl"></div>
+            <div className="absolute inset-0 bg-mercalo-blue rounded-full opacity-5 blur-3xl"></div>
             <img 
               src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80" 
               alt="Mercalo Technology Dashboard" 

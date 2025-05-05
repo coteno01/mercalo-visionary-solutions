@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CtaSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-mercalo-darkpurple text-white">
+    <section className="py-16 md:py-24 bg-mercalo-navy text-white">
       <div className="container-custom text-center">
         <h2 className="heading-lg mb-6">Ready to Transform Your Business?</h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-8">
@@ -13,7 +13,7 @@ const CtaSection = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link to="/contact">
-            <Button className="bg-mercalo-accent hover:bg-mercalo-purple text-white" size="lg">
+            <Button className="bg-mercalo-blue hover:bg-mercalo-accent text-white" size="lg">
               Contact Us Today
             </Button>
           </Link>

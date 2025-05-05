@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ServicesHero = () => {
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-white to-mercalo-light">
+    <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-white to-mercalo-lightblue/10">
       <div className="container-custom">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="heading-xl mb-6">Our <span className="text-gradient">Services</span></h1>
