@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, LineChart } from "lucide-react";
@@ -92,24 +91,24 @@ const CaseStudiesPage = () => {
       </section>
 
       {/* Results Overview */}
-      <section className="py-12 bg-mercalo-purple text-white">
+      <section className="py-12 bg-mercalo-purple text-white shadow-lg">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <h3 className="text-4xl font-bold mb-2">30+</h3>
-              <p className="text-gray-200">Projects Completed</p>
+              <h3 className="text-4xl font-bold mb-2 text-white">30+</h3>
+              <p className="text-white font-medium">Projects Completed</p>
             </div>
             <div className="text-center">
-              <h3 className="text-4xl font-bold mb-2">$15M+</h3>
-              <p className="text-gray-200">Client Savings</p>
+              <h3 className="text-4xl font-bold mb-2 text-white">$15M+</h3>
+              <p className="text-white font-medium">Client Savings</p>
             </div>
             <div className="text-center">
-              <h3 className="text-4xl font-bold mb-2">40%</h3>
-              <p className="text-gray-200">Avg. Efficiency Improvement</p>
+              <h3 className="text-4xl font-bold mb-2 text-white">40%</h3>
+              <p className="text-white font-medium">Avg. Efficiency Improvement</p>
             </div>
             <div className="text-center">
-              <h3 className="text-4xl font-bold mb-2">12</h3>
-              <p className="text-gray-200">Industries Served</p>
+              <h3 className="text-4xl font-bold mb-2 text-white">12</h3>
+              <p className="text-white font-medium">Industries Served</p>
             </div>
           </div>
         </div>
@@ -306,22 +305,27 @@ const CaseStudiesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-mercalo-darkpurple text-white">
+      <section className="py-16 md:py-24 bg-mercalo-navy text-white">
         <div className="container-custom text-center">
-          <h2 className="heading-lg mb-6">Ready to Achieve Similar Results?</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
+          <h2 className="heading-lg mb-6 text-white">Ready to Achieve Similar Results?</h2>
+          <p className="text-white max-w-2xl mx-auto mb-8">
             Let's discuss how Mercalo's solutions can address your specific challenges
             and help your business thrive.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact">
-              <Button className="bg-mercalo-accent hover:bg-mercalo-purple text-white" size="lg">
+              <Button className="bg-mercalo-accent hover:bg-white hover:text-mercalo-navy" size="lg">
                 Contact Us Today
               </Button>
             </Link>
             <Link to="/services">
-              <Button variant="outline" className="text-white border-white hover:bg-white/10" size="lg">
+              <Button 
+                variant="outline" 
+                className="bg-white text-mercalo-navy border-white hover:bg-mercalo-light hover:text-mercalo-navy" 
+                size="lg"
+              >
                 Explore Our Services
+                <ArrowRight className="ml-1" size={16} />
               </Button>
             </Link>
           </div>

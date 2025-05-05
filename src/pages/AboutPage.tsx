@@ -8,7 +8,8 @@ import {
   Award,
   Clock,
   BarChart4,
-  ThumbsUp
+  ThumbsUp,
+  ArrowRight
 } from "lucide-react";
 
 const AboutPage = () => {
@@ -250,8 +251,13 @@ const AboutPage = () => {
               </Button>
             </Link>
             <Link to="/case-studies">
-              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-mercalo-navy" size="lg">
+              <Button 
+                variant="outline" 
+                className="bg-white text-mercalo-navy border-white hover:bg-mercalo-light hover:text-mercalo-navy" 
+                size="lg"
+              >
                 View Our Case Studies
+                <ArrowRight className="ml-1" size={16} />
               </Button>
             </Link>
           </div>

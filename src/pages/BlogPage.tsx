@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Calendar, User, ArrowRight } from "lucide-react";
+import { Search, Calendar, User, ArrowRight, BookOpen } from "lucide-react";
 
 const BlogPage = () => {
   // Categories for filtering
@@ -105,7 +105,7 @@ const BlogPage = () => {
         <section className="py-16 bg-white">
           <div className="container-custom">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="order-2 md:order-1">
                 <div className="inline-block bg-mercalo-light px-3 py-1 rounded-full text-mercalo-purple font-medium mb-4">
                   Featured
                 </div>
@@ -122,17 +122,21 @@ const BlogPage = () => {
                   </div>
                 </div>
                 <Link to={`/blog/${featuredPost.id}`}>
-                  <Button className="btn-primary">
+                  <Button className="bg-mercalo-accent text-white hover:bg-mercalo-blue">
                     Read Article <ArrowRight size={16} className="ml-2" />
                   </Button>
                 </Link>
               </div>
-              <div>
+              <div className="order-1 md:order-2 relative">
+                <div className="absolute inset-0 bg-mercalo-accent rounded-full opacity-5 blur-3xl"></div>
                 <img 
                   src={featuredPost.image} 
                   alt={featuredPost.title} 
-                  className="rounded-lg shadow-xl" 
+                  className="rounded-lg shadow-xl relative z-10 transform transition-transform hover:scale-105 duration-300" 
                 />
+                <div className="absolute -bottom-4 -right-4 bg-mercalo-light rounded-full p-4 shadow-lg z-20">
+                  <BookOpen className="text-mercalo-purple" size={24} />
+                </div>
               </div>
             </div>
           </div>
@@ -146,9 +150,9 @@ const BlogPage = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                className={`px-5 py-2 rounded-full transition-all ${
+                className={`px-5 py-2 rounded-full transition-all shadow-sm ${
                   activeCategory === category
-                    ? "bg-mercalo-purple text-white"
+                    ? "bg-mercalo-purple text-white font-medium"
                     : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}
                 onClick={() => setActiveCategory(category)}
@@ -166,13 +170,17 @@ const BlogPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
               <Link to={`/blog/${post.id}`} key={post.id} className="group">
-                <div className="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                  <div className="aspect-video overflow-hidden">
+                <div className="bg-white rounded-lg shadow-md overflow-hidden card-hover transform transition-all hover:translate-y-[-8px]">
+                  <div className="aspect-video overflow-hidden relative">
                     <img 
                       src={post.image} 
                       alt={post.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute bottom-4 right-4 bg-mercalo-light p-2 rounded-full transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                      <ArrowRight className="text-mercalo-purple" size={16} />
+                    </div>
                   </div>
                   <div className="p-6">
                     <div className="inline-block bg-mercalo-light px-3 py-1 rounded-full text-mercalo-purple font-medium text-sm mb-4">
@@ -182,8 +190,8 @@ const BlogPage = () => {
                       {post.title}
                     </h3>
                     <p className="text-gray-700 mb-6">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <div className="text-gray-600 text-sm">{post.author}</div>
+                    <div className="flex items-center justify-between border-t pt-4 mt-2 border-gray-100">
+                      <div className="text-gray-600 text-sm font-medium">{post.author}</div>
                       <div className="text-gray-600 text-sm">{post.date}</div>
                     </div>
                   </div>
@@ -205,8 +213,8 @@ const BlogPage = () => {
       <section className="py-16 md:py-24 bg-mercalo-navy text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="heading-lg mb-6">Stay Updated</h2>
-            <p className="text-gray-300 mb-8">
+            <h2 className="heading-lg mb-6 text-white">Stay Updated</h2>
+            <p className="text-white mb-8">
               Subscribe to our newsletter to receive the latest insights on AI, ERP, 
               and business process automation.
             </p>

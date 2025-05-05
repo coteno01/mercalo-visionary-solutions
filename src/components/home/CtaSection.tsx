@@ -8,7 +8,7 @@ const CtaSection = () => {
     <section className="py-16 md:py-24 bg-mercalo-navy text-white">
       <div className="container-custom text-center">
         <h2 className="heading-lg mb-6">Ready to Transform Your Business?</h2>
-        <p className="text-gray-300 max-w-2xl mx-auto mb-8">
+        <p className="text-white max-w-2xl mx-auto mb-8">
           Let's discuss how our AI, ERP, and automation solutions can drive growth,
           efficiency, and innovation in your organization.
         </p>
@@ -21,7 +21,7 @@ const CtaSection = () => {
           <Link to="/services">
             <Button 
               variant="outline" 
-              className="bg-transparent text-white border-white hover:bg-white hover:text-mercalo-navy" 
+              className="bg-white text-mercalo-navy border-white hover:bg-mercalo-light hover:text-mercalo-navy" 
               size="lg"
             >
               Explore Our Services

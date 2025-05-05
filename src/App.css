@@ -13,7 +13,16 @@
 }
 
 .bg-mercalo-navy p, .bg-mercalo-darknavy p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Improve visibility for purple backgrounds */
+.bg-mercalo-purple {
+  color: white;
+}
+
+.bg-mercalo-purple p, .bg-mercalo-purple .text-gray-200 {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Keep other utility styles */
