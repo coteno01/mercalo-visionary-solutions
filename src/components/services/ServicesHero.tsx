@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const ServicesHero = () => {
   return (
@@ -14,10 +15,18 @@ const ServicesHero = () => {
           </p>
           <div className="flex justify-center gap-4">
             <Link to="/contact">
-              <Button className="btn-primary">Request Consultation</Button>
+              <Button className="bg-mercalo-blue hover:bg-mercalo-accent text-white">
+                Request Consultation
+              </Button>
             </Link>
             <Link to="/case-studies">
-              <Button variant="outline">View Case Studies</Button>
+              <Button 
+                variant="outline" 
+                className="border-mercalo-blue text-mercalo-blue hover:bg-mercalo-blue/10"
+              >
+                View Case Studies
+                <ArrowRight className="ml-1" size={16} />
+              </Button>
             </Link>
           </div>
         </div>

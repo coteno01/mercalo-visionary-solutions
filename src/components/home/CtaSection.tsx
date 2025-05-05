@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const CtaSection = () => {
   return (
@@ -18,8 +19,13 @@ const CtaSection = () => {
             </Button>
           </Link>
           <Link to="/services">
-            <Button variant="outline" className="text-white border-white hover:bg-white/10" size="lg">
+            <Button 
+              variant="outline" 
+              className="bg-white text-mercalo-navy border-white hover:bg-mercalo-lightblue hover:text-mercalo-navy hover:border-mercalo-lightblue" 
+              size="lg"
+            >
               Explore Our Services
+              <ArrowRight className="ml-1" size={16} />
             </Button>
           </Link>
         </div>
