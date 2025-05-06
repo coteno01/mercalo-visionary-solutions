@@ -92,7 +92,7 @@ const CaseStudiesPage = () => {
       </section>
 
       {/* Results Overview - Enhanced visibility */}
-      <section className="py-12 bg-mercalo-purple shadow-lg">
+      <section className="py-12 bg-mercalo-navy shadow-lg">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
@@ -178,57 +178,57 @@ const CaseStudiesPage = () => {
                 <div className="flex items-center space-x-4">
                   <div className="w-16">
                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <div className="bg-mercalo-purple h-2.5 rounded-full" style={{ width: '85%' }}></div>
+                      <div className="bg-mercalo-navy h-2.5 rounded-full" style={{ width: '85%' }}></div>
                     </div>
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium">85% of clients see ROI within 6 months</p>
+                    <p className="font-medium text-gray-800">85% of clients see ROI within 6 months</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-16">
                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <div className="bg-mercalo-purple h-2.5 rounded-full" style={{ width: '60%' }}></div>
+                      <div className="bg-mercalo-navy h-2.5 rounded-full" style={{ width: '60%' }}></div>
                     </div>
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium">60% average reduction in manual tasks</p>
+                    <p className="font-medium text-gray-800">60% average reduction in manual tasks</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-16">
                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <div className="bg-mercalo-purple h-2.5 rounded-full" style={{ width: '40%' }}></div>
+                      <div className="bg-mercalo-navy h-2.5 rounded-full" style={{ width: '40%' }}></div>
                     </div>
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium">40% average increase in operational efficiency</p>
+                    <p className="font-medium text-gray-800">40% average increase in operational efficiency</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-16">
                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <div className="bg-mercalo-purple h-2.5 rounded-full" style={{ width: '75%' }}></div>
+                      <div className="bg-mercalo-navy h-2.5 rounded-full" style={{ width: '75%' }}></div>
                     </div>
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium">75% of clients expand their solution within 1 year</p>
+                    <p className="font-medium text-gray-800">75% of clients expand their solution within 1 year</p>
                   </div>
                 </div>
               </div>
               
               <Link to="/contact">
-                <Button className="btn-primary">
+                <Button className="bg-mercalo-blue text-white hover:bg-mercalo-accent">
                   Talk to Our ROI Experts
                 </Button>
               </Link>
             </div>
             
             <div className="flex justify-center">
-              <LineChart size={350} className="text-mercalo-purple" />
+              <LineChart size={350} className="text-mercalo-navy" />
             </div>
           </div>
         </div>

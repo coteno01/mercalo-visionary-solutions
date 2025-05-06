@@ -14,7 +14,7 @@ const CtaSection = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link to="/contact">
-            <Button className="bg-mercalo-blue text-white hover:bg-white hover:text-mercalo-navy" size="lg">
+            <Button className="bg-mercalo-accent hover:bg-white hover:text-mercalo-navy" size="lg">
               Contact Us Today
             </Button>
           </Link>

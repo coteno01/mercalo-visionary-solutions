@@ -25,6 +25,12 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Enhanced visibility for case studies results section */
+.bg-mercalo-purple h3,
+.bg-mercalo-purple .text-white {
+  color: white !important;
+}
+
 /* Fix text color in blog category buttons and case studies stats */
 .bg-mercalo-light {
   color: rgba(0, 0, 0, 0.8);
@@ -40,8 +46,15 @@ button.bg-white.text-mercalo-navy {
   color: #001B3D !important;
 }
 
-/* Enhanced visibility for case studies results section */
+/* Enhanced visibility for case studies and blog sections */
 .text-white {
+  color: white !important;
+}
+
+/* Ensure visibility for case studies stats section */
+.bg-mercalo-purple .text-4xl,
+.bg-mercalo-purple .font-medium,
+.bg-mercalo-purple p {
   color: white !important;
 }
 
