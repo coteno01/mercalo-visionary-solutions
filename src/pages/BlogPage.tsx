@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -100,13 +101,13 @@ const BlogPage = () => {
         </div>
       </section>
 
-      {/* Featured Post */}
+      {/* Featured Post - Enhanced with better visuals */}
       {featuredPost && (
         <section className="py-16 bg-white">
           <div className="container-custom">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="order-2 md:order-1">
-                <div className="inline-block bg-mercalo-light px-3 py-1 rounded-full text-mercalo-purple font-medium mb-4">
+                <div className="inline-block bg-mercalo-accent text-white px-3 py-1 rounded-full font-medium mb-4">
                   Featured
                 </div>
                 <h2 className="heading-lg mb-4">{featuredPost.title}</h2>
@@ -128,14 +129,14 @@ const BlogPage = () => {
                 </Link>
               </div>
               <div className="order-1 md:order-2 relative">
-                <div className="absolute inset-0 bg-mercalo-accent rounded-full opacity-5 blur-3xl"></div>
+                <div className="absolute inset-0 bg-mercalo-accent rounded-full opacity-10 blur-3xl"></div>
                 <img 
                   src={featuredPost.image} 
                   alt={featuredPost.title} 
-                  className="rounded-lg shadow-xl relative z-10 transform transition-transform hover:scale-105 duration-300" 
+                  className="rounded-lg shadow-xl relative z-10 transform transition-transform hover:scale-105 duration-300 border-4 border-white" 
                 />
-                <div className="absolute -bottom-4 -right-4 bg-mercalo-light rounded-full p-4 shadow-lg z-20">
-                  <BookOpen className="text-mercalo-purple" size={24} />
+                <div className="absolute -bottom-4 -right-4 bg-mercalo-accent text-white rounded-full p-4 shadow-lg z-20">
+                  <BookOpen className="text-white" size={24} />
                 </div>
               </div>
             </div>
@@ -143,17 +144,17 @@ const BlogPage = () => {
         </section>
       )}
 
-      {/* Blog Categories */}
+      {/* Blog Categories - Enhanced contrast */}
       <section className="py-8 bg-mercalo-light">
         <div className="container-custom">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
                 key={category}
-                className={`px-5 py-2 rounded-full transition-all shadow-sm ${
+                className={`px-5 py-2 rounded-full transition-all shadow-md ${
                   activeCategory === category
-                    ? "bg-mercalo-purple text-white font-medium"
-                    : "bg-white text-gray-700 hover:bg-gray-100"
+                    ? "bg-mercalo-blue text-white font-medium"
+                    : "bg-white text-mercalo-navy hover:bg-gray-100"
                 }`}
                 onClick={() => setActiveCategory(category)}
               >

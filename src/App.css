@@ -25,6 +25,31 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Fix text color in blog category buttons and case studies stats */
+.bg-mercalo-light {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Enhanced button contrast */
+.btn-primary {
+  color: white !important;
+}
+
+.btn-secondary, 
+button.bg-white.text-mercalo-navy {
+  color: #001B3D !important;
+}
+
+/* Enhanced visibility for case studies results section */
+.text-white {
+  color: white !important;
+}
+
+/* Ensure blog filter buttons have proper contrast */
+.bg-mercalo-purple.text-white {
+  color: white !important;
+}
+
 /* Keep other utility styles */
 .logo {
   height: 6em;

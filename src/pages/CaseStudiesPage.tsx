@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, LineChart } from "lucide-react";
@@ -80,18 +81,18 @@ const CaseStudiesPage = () => {
             </p>
             <div className="flex justify-center gap-4">
               <Link to="/contact">
-                <Button className="btn-primary">Discuss Your Project</Button>
+                <Button className="bg-mercalo-blue text-white hover:bg-mercalo-accent">Discuss Your Project</Button>
               </Link>
               <Link to="/services">
-                <Button variant="outline">Our Services</Button>
+                <Button variant="outline" className="border-mercalo-blue text-mercalo-navy hover:bg-mercalo-light">Our Services</Button>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Results Overview */}
-      <section className="py-12 bg-mercalo-purple text-white shadow-lg">
+      {/* Results Overview - Enhanced visibility */}
+      <section className="py-12 bg-mercalo-purple shadow-lg">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
