@@ -12,6 +12,7 @@ import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:id" element={<BlogPostPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             {/* Redirect legacy URLs if needed */}
             <Route path="*" element={<NotFound />} />
           </Route>
